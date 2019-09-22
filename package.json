@@ -1,16 +1,15 @@
 {
-  "name": "emdemo",
-  "version": "0.1.1",
+  "name": "macaca-electron-app-sample",
   "private": true,
   "author": "jonnyps",
   "dependencies": {
-    "chai": "^4.2.0",
+    "chai": "4",
     "electron-is-dev": "^1.1.0",
-    "macaca-chrome": "^1.1.1",
-    "macaca-chromedriver": "^1.2.3",
-    "macaca-cli": "^2.2.0",
-    "macaca-wd": "^3.2.1",
-    "mocha": "^6.2.0",
+    "macaca-chrome": "1",
+    "macaca-chromedriver": "1",
+    "macaca-cli": "2",
+    "macaca-wd": "3",
+    "mocha": "6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
@@ -27,7 +26,8 @@
     "win-server": "macaca server --verbose",
     "win-start": " node server/servers.js ",
     "test": " mocha test/",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "contributor": "git-contributor"
   },
   "main": "public/electron.js",
   "homepage": "./",
@@ -104,6 +104,7 @@
     "electron-builder": "^21.1.5",
     "electron-packager": "^14.0.4",
     "eslint-plugin-mocha": "^6.1.1",
+    "git-contributor": "1",
     "wait-on": "^3.3.0"
   }
 }
