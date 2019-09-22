@@ -1,0 +1,109 @@
+{
+  "name": "emdemo",
+  "version": "0.1.1",
+  "private": true,
+  "author": "jonnyps",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "electron-is-dev": "^1.1.0",
+    "macaca-chrome": "^1.1.1",
+    "macaca-chromedriver": "^1.2.3",
+    "macaca-cli": "^2.2.0",
+    "macaca-wd": "^3.2.1",
+    "mocha": "^6.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test-concurrently": " concurrently \"node_modules/macaca-chromedriver/exec/ch*\" \"node_modules/.bin/mocha  testCase/\"  ",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
+    "dist": "electron-builder",
+    "mac-start": " node_modules/macaca-chromedriver/exec/ch* & macaca server --verbose",
+    "win-server": "macaca server --verbose",
+    "win-start": " node server/servers.js ",
+    "test": " mocha test/",
+    "lint": "eslint . --fix"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "build": {
+    "productName": "macaca-electron-builder",
+    "appId": "org.simulatedgreg.macaca-electron-builder",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/electron/**/*",
+      "node_modules/",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "electron-builder-start"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns"
+    },
+    "win": {
+      "icon": "build/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "electron": "^5.0.8",
+    "electron-builder": "^21.1.5",
+    "electron-packager": "^14.0.4",
+    "eslint-plugin-mocha": "^6.1.1",
+    "wait-on": "^3.3.0"
+  }
+}
