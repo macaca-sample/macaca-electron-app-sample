@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-           Macaca + react 环境  
+          Macaca + react 环境
         </p>
         <a id="macacaId"
           href="https://macacajs.github.io/zh/"
@@ -27,7 +27,7 @@ function App() {
         
       </header>
       <div>
-         <input placeholder='Macaca'></input>
+        <input placeholder='Macaca'></input>
       </div>
     </div>
   );
