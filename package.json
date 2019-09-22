@@ -103,6 +103,7 @@
     "electron": "^5.0.8",
     "electron-builder": "^21.1.5",
     "electron-packager": "^14.0.4",
+    "eslint": "^6.4.0",
     "eslint-plugin-mocha": "^6.1.1",
     "git-contributor": "1",
     "wait-on": "^3.3.0"
