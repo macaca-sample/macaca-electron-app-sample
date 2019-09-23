@@ -2,6 +2,7 @@
   "name": "macaca-electron-app-sample",
   "private": true,
   "author": "jonnyps",
+  "version": "1.0.0",
   "dependencies": {
     "chai": "4",
     "electron-is-dev": "^1.1.0",
