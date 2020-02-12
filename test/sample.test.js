@@ -2,68 +2,61 @@
 
 const wd = require('macaca-wd');
 
-const remoteConfig = {
-  host: 'localhost',
-  port: 3456 // Macaca server 默认使用 3456 端口
-};
-
-const driver = wd.promiseChainRemote(remoteConfig);
-
-describe('test electron.app', function() {
+describe('./test/sample.test.js', function() {
   this.timeout(5 * 60 * 1000);
 
-  let driver = wd.promiseChainRemote({
+  const driver = wd.promiseChainRemote({
     host: 'localhost',
     port: process.env.MACACA_SERVER_PORT || 3456
   });
 
-  before(function () {
+  before(() => {
     return driver.init({
       platformName: 'desktop',
       browserName: 'chrome',
       chromeOptions: {
-        "binary": "/Applications/macaca-electron-builder.app/Contents/MacOS/macaca-electron-builder" // 填写自己的执行文件路劲
+        binary: '/Applications/macaca-electron-builder.app/Contents/MacOS/macaca-electron-builder' // 填写自己的执行文件路劲
       }
     }).sleep(2 * 1000)
   });
 
-  after(function () {
+  after(() => {
     return driver
       .sleep(1000)
-      .close()
+      .close();
   })
 
-  it('click link', function () {
+  it('click link', () => {
     return driver
       .waitForElementById('macacaId', 5000, 100)
-      .click()
+      .click();
   })
 
-  it('click button', function () {
+  it('click button', () => {
     return driver
       .elementByCss('#app > div > header > div.sidebar-button')
-      .click()
+      .click();
   })
 
-  it('click title ', function () {
+  it('click title ', () => {
     return driver
       .elementByCss('#app > div > div.sidebar > nav > div:nth-child(2) > div > a > span.title')
       .sleep(2000)
-      .click()
+      .click();
   })
 
-  it('click title', function () {
+  it('click title', () => {
     return driver
       .elementByCss('#app > div > div.sidebar > nav > div:nth-child(3) > div > a > span.title')
       .sleep(2000)
-      .click()
+      .click();
   })
 
-  it('input text', function () {
+  it('input text', () => {
     return driver
       .elementByCss('#app > div > header > div.links > div > input')
       .sleep(2000)
       .click()
-      .sendKeys('计算机')
+      .sendKeys('计算机');
   })
 })
