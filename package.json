@@ -101,7 +101,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
-    "electron": "^5.0.8",
+    "electron": "^9.1.0",
     "electron-builder": "^21.1.5",
     "electron-packager": "^14.0.4",
     "eslint": "^5.16.0",
